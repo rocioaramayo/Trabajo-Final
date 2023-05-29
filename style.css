@@ -1,0 +1,19 @@
+*{
+    margin:0;
+    padding: 0;
+
+}
+#form{
+    margin-left: 40%;
+    margin-right: 40%;
+    margin-top: 2%;
+}
+.boton{
+    text-align: center;
+}
+.botones{
+    display: flex;
+}
+.form-check{
+    margin-right: 8%;
+}
