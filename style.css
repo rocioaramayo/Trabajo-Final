@@ -4,9 +4,15 @@
 
 }
 #form{
-    margin-left: 40%;
-    margin-right: 40%;
-    margin-top: 2%;
+    position: absolute;
+    top:50%;
+    left:50%;
+    color:black;
+    transform: translate(-50%,-50%);
+    z-index:101;
+    border: solid 1px #fff;
+    padding: 2%;
+    border-radius: 10px;
 }
 .boton{
     text-align: center;
