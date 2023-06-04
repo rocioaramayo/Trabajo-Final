@@ -1,6 +1,7 @@
 *{
     margin:0;
     padding: 0;
+    background-color: antiquewhite;
 
 }
 #form{
@@ -35,4 +36,9 @@
     margin:10px;
     margin-left: 20px;
     margin-right: 20px;
+}
+
+.btn-primary{
+    background-color: transparent;
+    color: #000;
 }
