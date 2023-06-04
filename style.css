@@ -3,10 +3,32 @@
     padding: 0;
 
 }
-#form{
-    margin-left: 40%;
-    margin-right: 40%;
-    margin-top: 2%;
+
+form{
+    position: absolute;
+    top:50%;
+    left:50%;
+    color:black;
+    transform: translate(-50%,-50%);
+    z-index:101;
+    background-color: #fff;
+    border: solid 1px #fff;
+    padding: 2%;
+    border-radius: 10px;
+    box-shadow:  2px 2px 2px 1px rgba(0, 0, 0, 0.2)
+}
+
+#fondo_index{
+    position: relative;
+    height: 100vh ;
+    width: 100%;
+    background-image: url("./img/gradient_2.jpg");
+    background-size: cover;
+    background-position: center;
+}
+#h2_index{
+    text-align: center;
+
 }
 .boton{
     text-align: center;
@@ -22,17 +44,42 @@
     margin-left: 5px;
 
 }
+
+#fondo_empleados{
+    position: relative;
+    height: 100vh ;
+    width: 100%;
+    background-image: url("./img/gradient3.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
 #cards{
     display:grid;
-    grid-template-columns: auto auto auto ;
+    grid-template-columns: auto auto;
     grid-template-rows: auto auto;
     margin:10px;
     justify-content: center;
-    border: 2px solid red;
 }
 
 .card{
-    margin:10px;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin:10px 20px 0 20px;
+    border: transparent;
+}
+
+.btn-info{
+    display:flex;
+    justify-content: center;
+}
+.btn-info:hover{
+    background-color: transparent;
+}
+
+#fondo_carrusel{
+    background-image: url(./img/gradient3.jpg);
+}
+
+.carousel-item{
+    height: 400px;
+    width: 500px;
 }
