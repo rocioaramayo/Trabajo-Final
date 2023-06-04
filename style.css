@@ -4,10 +4,32 @@
     background-color: antiquewhite;
 
 }
-#form{
-    margin-left: 40%;
-    margin-right: 40%;
-    margin-top: 2%;
+
+form{
+    position: absolute;
+    top:50%;
+    left:50%;
+    color:black;
+    transform: translate(-50%,-50%);
+    z-index:101;
+    background-color: #fff;
+    border: solid 1px #fff;
+    padding: 2%;
+    border-radius: 10px;
+    box-shadow:  2px 2px 2px 1px rgba(0, 0, 0, 0.2)
+}
+
+#fondo_index{
+    position: relative;
+    height: 100vh ;
+    width: 100%;
+    background-image: url("./img/gradient_2.jpg");
+    background-size: cover;
+    background-position: center;
+}
+#h2_index{
+    text-align: center;
+
 }
 .boton{
     text-align: center;
@@ -36,9 +58,4 @@
     margin:10px;
     margin-left: 20px;
     margin-right: 20px;
-}
-
-.btn-primary{
-    background-color: transparent;
-    color: #000;
 }
