@@ -42,21 +42,36 @@ h2{
 .form-check{
     margin-right: 8%;
 }
+#cards .btn-primary:hover{
+    background-color: transparent;
+    color:#000;
+    transition: 0.2s;
+}
 
 .nav-item{
     margin-left: 5px;
-
 }
+
+#fondo_empleados{
+    position: relative;
+    height: 100vh ;
+    width: 100%;
+    background-image: url("./img/gradient3.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
 #cards{
-    display:flex;
-    /* grid-template-columns: auto auto ;
-    grid-template-rows: auto auto; */
-    
-    /* justify-content: center; */
+    display:grid;
+    grid-template-columns: auto auto ;
+    grid-template-rows: auto auto;
+    margin:10px;
+    justify-content: center;
 }
 
 .card{
-    margin:1%;
+    margin:10px;
     margin-left: 20px;
     margin-right: 20px;
 }
+
