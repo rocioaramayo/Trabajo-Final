@@ -1,20 +1,14 @@
-$(document).ready(function(){
-
-
-    $("#ingresar").click(function(){
-
-        $("#gridRadios1").click(function(){
-            $("#login").attr("href", "https://www.w3schools.com/jquery/");
-        })
-            
-        $("#gridRadios2").click(function(){
-            $("#login").attr("href", "https://www.w3schools.com/jquery/");
-        })
-        
-
-            
+$(document).ready(function () {
+    
+    $("#target").on("submit", function (evento) {
+        evento.preventDefault();
+        var empleado =  $('#gridRadioEmpleado').is(':checked')
+        if (empleado) {
+            window.location.href = "empleado.html"
+        }
+        else {
+            window.location.href = "coordinador.html"
+        }
     })
-
-
 
 })
