@@ -4,7 +4,7 @@
 
 }
 
-form{
+#target{
     position: absolute;
     top:50%;
     left:50%;
@@ -22,6 +22,12 @@ form{
     position: relative;
     height: 100vh ;
     width: 100%;
+    background-image: url("./img/gradient_2.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+#form1{
     background-image: url("./img/gradient_2.jpg");
     background-size: cover;
     background-position: center;
@@ -53,12 +59,13 @@ h2{
 }
 
 #fondo_empleados{
-    position: relative;
+    /* position: relative;
     height: 100vh ;
     width: 100%;
     background-image: url("./img/gradient3.jpg");
     background-size: cover;
-    background-position: center;
+    background-position: center;  */
+
 }
 
 #cards{
@@ -75,3 +82,25 @@ h2{
     margin-right: 20px;
 }
 
+#primer_formulario{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.fondo_azul{
+    padding: 2%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    background-color: #fff;
+}
+
+#f-salud{
+    text-align: center;
+    color: #fff;
+    margin: 2%;
+}
+#form1 .btn{
+    margin-bottom: 2%;
+}
