@@ -14,7 +14,7 @@ $(document).ready(function () {
 })
 
 
-document.addEventListener('DOMContentLoaded', function() {
+/*document.addEventListener('DOMContentLoaded', function() {
     var usernameInput = document.getElementById('exampleInputEmail1');
     var passwordInput = document.getElementById('exampleInputPassword1');
     var loginButton = document.getElementById('ingresar');
@@ -33,23 +33,57 @@ document.addEventListener('DOMContentLoaded', function() {
       loginButton.disabled = !(isUsernameValid && isPasswordValid);
     }
   
-    usernameInput.addEventListener(validateForm);
-    passwordInput.addEventListener(validateForm);
-  });
+    usernameInput.addEventListener("input",validateForm);
+    passwordInput.addEventListener("input",validateForm);
+});*/
+document.addEventListener('DOMContentLoaded', function() {
+    var usernameInput = document.getElementById('exampleInputEmail1');
+    var passwordInput = document.getElementById('exampleInputPassword1');
+    var loginButton = document.getElementById('ingresar');
+    var usernameError = document.getElementById('usernameError');
+    var passwordError = document.getElementById('passwordError');
 
-  /*const button = document.getElementById('enviar');
-  const form = document.getElementById('formulario');
-  const sectionForm = document.getElementById('form_label');
-  
-  function validar() {
-      if (form.label.value == 0) {
-          alert("El campo es obligatorio");
-          console.log("Funciona");
-          form.form-label.focus();
-          return false;
-      }
-  }
-  
-  button.onclick = validar;*/ //EROR, INTENTANDO VER QUE PASA JAJAJAJA
-  
-  
+    if (usernameInput && passwordInput && loginButton && usernameError && passwordError) {
+        function validateForm() {
+            var username = usernameInput.value;
+            var password = passwordInput.value;
+            var isUsernameValid = username.length >= 8;
+            var isPasswordValid = password.length >= 8;
+
+            usernameError.textContent = isUsernameValid ? '' : 'El nombre de usuario debe tener al menos 8 caracteres';
+            passwordError.textContent = isPasswordValid ? '' : 'La contraseña debe tener al menos 8 caracteres';
+
+            loginButton.disabled = !(isUsernameValid && isPasswordValid);
+        }
+
+        usernameInput.addEventListener("input", validateForm);
+        passwordInput.addEventListener("input", validateForm);
+    }
+});
+
+
+
+const formulario = document.getElementById("formulario")
+const inputs = document.querySelectorAll("#formulario textarea")
+
+const validarFormulario = (e) => {
+    switch(e.target.name){
+        case "usuario":
+
+        break
+    }
+    
+    
+    
+} 
+
+
+inputs.forEach((input) => {
+    input.addEventListener("keyup",validarFormulario);
+    input.addEventListener("blur",validarFormulario);
+});
+
+formulario.addEventListener("submit",(e) =>{
+    e.preventDefault();
+
+})
