@@ -33,8 +33,23 @@ document.addEventListener('DOMContentLoaded', function() {
       loginButton.disabled = !(isUsernameValid && isPasswordValid);
     }
   
-    usernameInput.addEventListener('input', validateForm);
-    passwordInput.addEventListener('input', validateForm);
+    usernameInput.addEventListener(validateForm);
+    passwordInput.addEventListener(validateForm);
   });
+
+  /*const button = document.getElementById('enviar');
+  const form = document.getElementById('formulario');
+  const sectionForm = document.getElementById('form_label');
+  
+  function validar() {
+      if (form.label.value == 0) {
+          alert("El campo es obligatorio");
+          console.log("Funciona");
+          form.form-label.focus();
+          return false;
+      }
+  }
+  
+  button.onclick = validar;*/ //EROR, INTENTANDO VER QUE PASA JAJAJAJA
   
   
