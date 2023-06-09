@@ -17,7 +17,21 @@ $(document).ready(function () {
 
     $("#ver_completada_politica").on("click", function () {
         window.location.href = "politica_form.html"
-     })
+    })
+
+    //Pagina coordinador
+    $("#ver_completado_salu_Jose").on("click", function () {
+        window.location.href = "salud_form2.html"
+    })
+     
+    // $("#ver_completada_segu_mati").on("click", function () {
+    //     window.location.href = "politica_form.html"
+    // })
+
+    // $("#ver_completada_vi_tomi").on("click", function () {
+    //     window.location.href = "politica_form.html"
+    // })
+
 
 
 
