@@ -10,6 +10,7 @@ $(document).ready(function () {
             window.location.href = "coordinador.html"
         }
     })
+    //Pagina empleado
 
     $("#ver_completada_educacion").on("click", function () {
        window.location.href = "educacion_form.html"
