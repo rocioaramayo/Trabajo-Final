@@ -5,12 +5,14 @@ $(document).ready(function () {
         nivel:"primaria",
         escuela:"Santa lucia"
     }
+    
     let encuesta_politica={
         edad:"16",
         partido:"peron",
-        vota:"si"
+        vota:"si",
     }
 
+    
     $("#edad").text(encuesta_educacion.edad)
     $("#estudio").text(encuesta_educacion.nivel)
     $("#escuela").text(encuesta_educacion.escuela)
