@@ -24,13 +24,13 @@ $(document).ready(function () {
         window.location.href = "salud_form2.html"
     })
      
-    // $("#ver_completada_segu_mati").on("click", function () {
-    //     window.location.href = "politica_form.html"
-    // })
+    $("#ver_completada_segu_mati").on("click", function () {
+        window.location.href = "seguridad2_form.html"
+    })
 
-    // $("#ver_completada_vi_tomi").on("click", function () {
-    //     window.location.href = "politica_form.html"
-    // })
+    $("#ver_completada_vi_tomi").on("click", function () {
+        window.location.href = "vivienda2_form.html"
+    })
 
 
 
