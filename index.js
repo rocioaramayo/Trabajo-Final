@@ -17,6 +17,11 @@ $(document).ready(function () {
     if ( solo_parametro_completada!= undefined && solo_parametro_completada != null){
         $("#soloVivienda").val(solo_parametro_completada)
         $("#soloVivienda").prop('disabled', true);
+        $("#enviar_vivienda").text("Volver")
+        $("#form_vivienda").on("submit", function (evento) {
+            evento.preventDefault();
+            window.location.href = document.referrer;
+        })
     }
    
     var departamento_parametro_completada = params.get('departamento_completado');
@@ -52,6 +57,11 @@ $(document).ready(function () {
     if ( edad_parametro_completada!= undefined && edad_parametro_completada != null){
         $("#edadAño").val(edad_parametro_completada)
         $("#edadAño").prop('disabled', true);
+        $("#enviar_salud").text("Volver")
+        $("#formulario_salud").on("submit", function (evento) {
+            evento.preventDefault();
+            window.location.href = document.referrer;
+        })
     }
     var peso_parametro_completada = params.get('peso_completada');
     if ( peso_parametro_completada!= undefined && peso_parametro_completada != null){
@@ -84,6 +94,11 @@ $(document).ready(function () {
     if ( descargar_parametro_completada!= undefined && descargar_parametro_completada != null){
         $("#descarga").val(descargar_parametro_completada)
         $("#descarga").prop('disabled', true);
+        $("#enviar_seguridad").text("Volver")
+        $("#formulario_seguridad").on("submit", function (evento) {
+            evento.preventDefault();
+            window.location.href = document.referrer;
+        })
     }
 
     var eliminar_parametro_completada = params.get('eliminar_completada');
@@ -119,6 +134,11 @@ $(document).ready(function () {
     if ( rol_parametro_completada!= undefined &&  rol_parametro_completada!= null){
         $("#rol").val(rol_parametro_completada)
         $("#rol").prop('disabled', true);
+        $("#enviar_segundo").text("Volver")
+        $("#formulario_segundo").on("submit", function (evento) {
+            evento.preventDefault();
+            window.location.href = document.referrer;
+        })
     }
 
     var descripcion_parametro_completada = params.get('descripcion_completada');
