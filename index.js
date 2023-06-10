@@ -35,11 +35,9 @@ $(document).ready(function () {
     if ( garage_parametro_completada!= undefined && garage_parametro_completada!= null){
         $("#garageCasa").val(garage_parametro_completada)
         $("#garageCasa").prop('disabled', true);
-
     }
 
     //Parametros de salud
-
     var edad_parametro = params.get('edad');
     var peso_parametro =params.get("peso")
     var altura_parametro =params.get("altura")
@@ -141,9 +139,6 @@ $(document).ready(function () {
         $("#enojo").prop('disabled', true);
     }
 
-
-
-
     $("#target").on("submit", function (evento) {
         evento.preventDefault();
         var empleado =  $('#gridRadioEmpleado').is(':checked')
@@ -217,7 +212,6 @@ $(document).ready(function () {
     //Seguridad formu
     $("#ver_completada_seguridad").on("click", function () {
         window.location.href = "seguridad_form.html?descargar_completada="+descargar_parametro +"&eliminar_completada="+eliminar_parametro+"&terminologia_completada="+terminologia_parametro+"&hackear_completada="+hackear_parametro
-
     })
 
     $("#ver_completada_segundo").on("click", function () {
