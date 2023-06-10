@@ -21,4 +21,14 @@ $(document).ready(function () {
     $("#partido").text(encuesta_politica.partido)
     $("#votar").text(encuesta_politica.vota)
 
+    $("#formulario_educacion").on("submit", function (evento) {
+        evento.preventDefault();
+        window.location.href = document.referrer;
+    })
+
+    $("#formulario_politica").on("submit", function (evento) {
+        evento.preventDefault();
+        window.location.href = document.referrer;
+    })
+
 })

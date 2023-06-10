@@ -14,26 +14,27 @@
 </head>
 <body id="form1">
     <main>
-        <form action="" id="formulario">
+        <form action="" id="formulario_politica">
             <h2 id="f-salud">Formulario de politica</h2>
             <div class="mb-3 fondo_azul" id="form_label">
-                <label for="exampleFormControlInput1" class="form-label">Edad</label>
-                <textarea class="form-control" aria-label="With textarea" id="edad_politica"></textarea>
+                <label for="exampleFormControlInput1" class="form-label" >Edad</label>
+                <textarea class="form-control" aria-label="With textarea" id="edad_politica" disabled></textarea>
             </div>
             <div class="mb-3 fondo_azul" id="form_label">
                 <label for="exampleFormControlInput1" class="form-label">¿Que partido seguis?</label>
-                <textarea class="form-control" aria-label="With textarea" id="partido"></textarea>
+                <textarea class="form-control" aria-label="With textarea" id="partido" disabled></textarea>
             </div>
             <div class="mb-3 fondo_azul" id="form_label">
-                <label for="exampleFormControlInput1" class="form-label">¿Vas a votar este año?</label>
-                <textarea class="form-control" aria-label="With textarea" id="votar"></textarea>
+                <label for="exampleFormControlInput1" class="form-label" >¿Vas a votar este año?</label>
+                <textarea class="form-control" aria-label="With textarea" id="votar" disabled></textarea>
+            </div>
+            <div class="boton">
+                <button type="submit" class="btn btn-primary" id="volver_politica">Volver</button>
             </div>
         </form>
-        <div class="boton">
-            <button class="btn btn-primary" id="enviar">Volver</button>
-        </div>
-        <script src="formularios.js"></script>
+
+        
     </main>
-    
+    <script src="formularios.js"></script>
 </body>
 </html>

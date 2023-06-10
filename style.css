@@ -80,7 +80,25 @@ h2{
 
     font-family: 'Righteous', cursive;
 }
+/* Listado de empleados */
+/* .empleado{
+    width: 18rem;
+    height: 15rem;
+    border-radius: 50%;
+    margin: 2%;
+}
+.cajas_emple{
+    text-align: center;
+    width: 25%;
+    height: fit-content;
+    background-color: aqua;
+    margin: 2%;
+}
 
+#empleados_sector{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+} */
 .fondo_azul{
     padding: 2%;
     padding-top: 2.5%;
