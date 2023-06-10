@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coordinador</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Righteous&family=Tajawal:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon">
+</head>
+<body >
+    <header id="fondo">
+        <nav class="navbar navbar-expand-lg ">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">NetGuardians</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex">
+                      <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="#pendiente">Encuestas</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href=" #empleados">Empleados</a>
+                      </li>
+                      
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+      <div id="completadas">
+        <h2>Encuestas de empleados</h2>
+        <div id="cards">
+          <div class="card" style="width: 18rem;">
+            <img src="./img/salud.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Salud</h5>
+              <p class="card-text">Jose Pedro Diaz</p>
+              <button  class="btn btn-primary" id="ver_completado_salu_Jose">Ver</button>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem;">
+            <img src="./img/seguridad.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Seguridad</h5>
+              <p class="card-text">Matias Lucero</p>
+              <button  class="btn btn-primary" id="ver_completada_segu_mati">Ver</button>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem;">
+            <img src="./img/edificio.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Vivienda</h5>
+              <p class="card-text">Tomás Bonomo</p>
+              <button  class="btn btn-primary" id="ver_completada_vi_tomi">Ver</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div id="empleados">
+        <div id="">
+
+        </div>
+      </div>
+    </main>
+
+
+    <script src="index.js"></script>
+</body>
+</html>

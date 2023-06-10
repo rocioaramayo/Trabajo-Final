@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    
+    //Funcion para log in
     $("#target").on("submit", function (evento) {
         evento.preventDefault();
         var empleado =  $('#gridRadioEmpleado').is(':checked')
@@ -10,8 +10,68 @@ $(document).ready(function () {
             window.location.href = "coordinador.html"
         }
     })
+    //Pagina empleado
+
+    $("#ver_completada_educacion").on("click", function () {
+       window.location.href = "educacion_form.html"
+    })
+
+    $("#ver_completada_politica").on("click", function () {
+        window.location.href = "politica_form.html"
+    })
+
+    //Pagina coordinador
+    $("#ver_completado_salu_Jose").on("click", function () {
+        window.location.href = "salud_form2.html"
+    })
+     
+    $("#ver_completada_segu_mati").on("click", function () {
+        window.location.href = "seguridad2_form.html"
+    })
+
+    $("#ver_completada_vi_tomi").on("click", function () {
+        window.location.href = "vivienda2_form.html"
+    })
+
+
+
+
+
+
+
+
+
+
+
 
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*document.addEventListener('DOMContentLoaded', function() {
@@ -36,101 +96,49 @@ $(document).ready(function () {
     usernameInput.addEventListener("input",validateForm);
     passwordInput.addEventListener("input",validateForm);
 });*/
-document.addEventListener('DOMContentLoaded', function() {
-    var usernameInput = document.getElementById('exampleInputEmail1');
-    var passwordInput = document.getElementById('exampleInputPassword1');
-    var loginButton = document.getElementById('ingresar');
-    var usernameError = document.getElementById('usernameError');
-    var passwordError = document.getElementById('passwordError');
+// document.addEventListener('DOMContentLoaded', function() {
+//     var usernameInput = document.getElementById('exampleInputEmail1');
+//     var passwordInput = document.getElementById('exampleInputPassword1');
+//     var loginButton = document.getElementById('ingresar');
+//     var usernameError = document.getElementById('usernameError');
+//     var passwordError = document.getElementById('passwordError');
 
-    if (usernameInput && passwordInput && loginButton && usernameError && passwordError) {
-        function validateForm() {
-            var username = usernameInput.value;
-            var password = passwordInput.value;
-            var isUsernameValid = username.length >= 8;
-            var isPasswordValid = password.length >= 8;
+//     if (usernameInput && passwordInput && loginButton && usernameError && passwordError) {
+//         function validateForm() {
+//             var username = usernameInput.value;
+//             var password = passwordInput.value;
+//             var isUsernameValid = username.length >= 8;
+//             var isPasswordValid = password.length >= 8;
 
-            usernameError.textContent = isUsernameValid ? '' : 'El nombre de usuario debe tener al menos 8 caracteres';
-            passwordError.textContent = isPasswordValid ? '' : 'La contraseña debe tener al menos 8 caracteres';
+//             usernameError.textContent = isUsernameValid ? '' : 'El nombre de usuario debe tener al menos 8 caracteres';
+//             passwordError.textContent = isPasswordValid ? '' : 'La contraseña debe tener al menos 8 caracteres';
 
-            loginButton.disabled = !(isUsernameValid && isPasswordValid);
-        }
+//             loginButton.disabled = !(isUsernameValid && isPasswordValid);
+//         }
 
-        usernameInput.addEventListener("input", validateForm);
-        passwordInput.addEventListener("input", validateForm);
+//         usernameInput.addEventListener("input", validateForm);
+//         passwordInput.addEventListener("input", validateForm);
+//     }
+// });
+
+
+
+const formulario = document.getElementById("formulario")
+const inputs = document.querySelectorAll("#formulario textarea")
+
+const validarFormulario = (e) => {
+    switch(e.target.name){
+        case "usuario":
+
+        break
     }
-});
-
-
-
-const formulario = document.getElementById("formulario");
-const labels = document.querySelectorAll("#label");
-
-formulario.addEventListener("submit", function(event){
-    event.preventDefault();
-    validarRespuesta();
-});
-
-console.log("Todo ok");
-
-labels.forEach(function(label) {
-    const input = label.querySelector("input, textarea, select");
-
-    input.addEventListener("input", function(){
-        validarRespuesta();
-        console.log("Hola");
-    });
     
-    input.addEventListener("keypress", function(event){
-        if(event.key === "Enter"){
-            event.preventDefault();
-            validarRespuesta();
-        }
-    });
-});
-
-console.log("Hola");
-
-function validarRespuesta() {
-    console.log("Entro en la función");
-    let respuestasValidas = true;
-      
-    labels.forEach(function(label) {
-        const input = label.querySelector("input, textarea, select");
-        const respuesta = input.value;
-      
-        if (!respuestaValida(respuesta)) {
-            respuestasValidas = false;
-            // Puedes agregar aquí lógica adicional para tratar una respuesta no válida en un elemento específico si es necesario
-            input.classList.add("respuesta-invalida");
-        } else {
-            // Puedes eliminar la clase "respuesta-invalida" en caso de que se haya agregado en validaciones anteriores
-            input.classList.remove("respuesta-invalida");
-        }
-    });
     
-    console.log("Todo ok");
     
-    if (respuestasValidas) {
-        console.log("El botón de enviar funciona correctamente.");
-        formulario.submit();
-    } else {
-        alert("Una o más respuestas no son válidas. Por favor, reintente.");
-    }
-}
-      
-function respuestaValida(respuesta){
-    if(respuesta.trim() !== ""){
-        return true;
-    } else {
-        return false;
-    }
-}
+} 
 
 
-
-
-/*inputs.forEach((input) => {
+inputs.forEach((input) => {
     input.addEventListener("keyup",validarFormulario);
     input.addEventListener("blur",validarFormulario);
 });
@@ -138,4 +146,4 @@ function respuestaValida(respuesta){
 formulario.addEventListener("submit",(e) =>{
     e.preventDefault();
 
-})*/
+})
