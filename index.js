@@ -63,22 +63,74 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-const formulario = document.getElementById("formulario")
-const inputs = document.querySelectorAll("#formulario textarea")
+const formulario = document.getElementById("formulario");
+const labels = document.querySelectorAll("#label");
 
-const validarFormulario = (e) => {
-    switch(e.target.name){
-        case "usuario":
+formulario.addEventListener("submit", function(event){
+    event.preventDefault();
+    validarRespuesta();
+});
 
-        break
+console.log("Todo ok");
+
+labels.forEach(function(label) {
+    const input = label.querySelector("input, textarea, select");
+
+    input.addEventListener("input", function(){
+        validarRespuesta();
+        console.log("Hola");
+    });
+    
+    input.addEventListener("keypress", function(event){
+        if(event.key === "Enter"){
+            event.preventDefault();
+            validarRespuesta();
+        }
+    });
+});
+
+console.log("Hola");
+
+function validarRespuesta() {
+    console.log("Entro en la función");
+    let respuestasValidas = true;
+      
+    labels.forEach(function(label) {
+        const input = label.querySelector("input, textarea, select");
+        const respuesta = input.value;
+      
+        if (!respuestaValida(respuesta)) {
+            respuestasValidas = false;
+            // Puedes agregar aquí lógica adicional para tratar una respuesta no válida en un elemento específico si es necesario
+            input.classList.add("respuesta-invalida");
+        } else {
+            // Puedes eliminar la clase "respuesta-invalida" en caso de que se haya agregado en validaciones anteriores
+            input.classList.remove("respuesta-invalida");
+        }
+    });
+    
+    console.log("Todo ok");
+    
+    if (respuestasValidas) {
+        console.log("El botón de enviar funciona correctamente.");
+        formulario.submit();
+    } else {
+        alert("Una o más respuestas no son válidas. Por favor, reintente.");
     }
-    
-    
-    
-} 
+}
+      
+function respuestaValida(respuesta){
+    if(respuesta.trim() !== ""){
+        return true;
+    } else {
+        return false;
+    }
+}
 
 
-inputs.forEach((input) => {
+
+
+/*inputs.forEach((input) => {
     input.addEventListener("keyup",validarFormulario);
     input.addEventListener("blur",validarFormulario);
 });
@@ -86,4 +138,4 @@ inputs.forEach((input) => {
 formulario.addEventListener("submit",(e) =>{
     e.preventDefault();
 
-})
+})*/
