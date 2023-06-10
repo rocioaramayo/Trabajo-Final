@@ -1,5 +1,36 @@
 $(document).ready(function () {
-    //Funcion para log in
+
+    var params = new URLSearchParams(window.location.search);
+    var solo_parametro = params.get('solo');
+    //obtengo parametros con params get
+    var departamento_parametro =params.get("departamento")
+
+    if (solo_parametro != undefined && solo_parametro != null){
+        // $("#soloVivienda").val(solo_parametro)
+
+
+        $("#vivienda_pendiente").hide()
+        $('#vivienda_completada').removeAttr('hidden');
+    }
+
+
+    var solo_parametro_completada = params.get('solocompletada');
+    if ( solo_parametro_completada!= undefined && solo_parametro_completada != null){
+        $("#soloVivienda").val(solo_parametro_completada)
+
+    }
+   
+    var departamento_parametro_completada = params.get('departamento_completado');
+    if ( departamento_parametro_completada!= undefined && departamento_parametro_completada != null){
+        $("#departamentoCasa").val(departamento_parametro_completada)
+    }
+
+
+
+    
+
+
+
     $("#target").on("submit", function (evento) {
         evento.preventDefault();
         var empleado =  $('#gridRadioEmpleado').is(':checked')
@@ -33,9 +64,29 @@ $(document).ready(function () {
         window.location.href = "vivienda2_form.html"
     })
 
+    //pendientes
+    $("#form_vivienda").on("submit", function (evento) {
+        evento.preventDefault();
+
+        encuesta_vivienda={
+            solo:"Vivo",
+            departamento:"Vivo en departamento",
+            cercania:"Vivo cerca del subte",
+            garage:"si tiene dos",
+        }
+  
 
 
+        window.location.href= "empleado.html?solo="+$("#soloVivienda").val()+"&departamento="+$("#departamentoCasa").val()
 
+    })
+
+    $("#ver_completada_vivienda").on("click", function () {
+        window.location.href = "vivienda_form.html?solocompletada="+solo_parametro +"&departamento_completado="+departamento_parametro
+        //recibir.html?nombre=Miguel&edad=37
+     })
+
+     //agragar los parametros
 
 
 
@@ -45,101 +96,3 @@ $(document).ready(function () {
 
 
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*document.addEventListener('DOMContentLoaded', function() {
-    var usernameInput = document.getElementById('exampleInputEmail1');
-    var passwordInput = document.getElementById('exampleInputPassword1');
-    var loginButton = document.getElementById('ingresar');
-    var usernameError = document.getElementById('usernameError');
-    var passwordError = document.getElementById('passwordError');
-  
-    function validateForm() {
-      var username = usernameInput.value;
-      var password = passwordInput.value;
-      var isUsernameValid = username.length >= 8;
-      var isPasswordValid = password.length >= 8;
-  
-      usernameError.textContent = isUsernameValid ? '' : 'El nombre de usuario debe tener al menos 8 caracteres';
-      passwordError.textContent = isPasswordValid ? '' : 'La contraseña debe tener al menos 8 caracteres';
-  
-      loginButton.disabled = !(isUsernameValid && isPasswordValid);
-    }
-  
-    usernameInput.addEventListener("input",validateForm);
-    passwordInput.addEventListener("input",validateForm);
-});*/
-// document.addEventListener('DOMContentLoaded', function() {
-//     var usernameInput = document.getElementById('exampleInputEmail1');
-//     var passwordInput = document.getElementById('exampleInputPassword1');
-//     var loginButton = document.getElementById('ingresar');
-//     var usernameError = document.getElementById('usernameError');
-//     var passwordError = document.getElementById('passwordError');
-
-//     if (usernameInput && passwordInput && loginButton && usernameError && passwordError) {
-//         function validateForm() {
-//             var username = usernameInput.value;
-//             var password = passwordInput.value;
-//             var isUsernameValid = username.length >= 8;
-//             var isPasswordValid = password.length >= 8;
-
-//             usernameError.textContent = isUsernameValid ? '' : 'El nombre de usuario debe tener al menos 8 caracteres';
-//             passwordError.textContent = isPasswordValid ? '' : 'La contraseña debe tener al menos 8 caracteres';
-
-//             loginButton.disabled = !(isUsernameValid && isPasswordValid);
-//         }
-
-//         usernameInput.addEventListener("input", validateForm);
-//         passwordInput.addEventListener("input", validateForm);
-//     }
-// });
-
-
-
-// const formulario = document.getElementById("formulario")
-// const inputs = document.querySelectorAll("#formulario textarea")
-
-// const validarFormulario = (e) => {
-//     switch(e.target.name){
-//         case "usuario":
-//         break
-//     }
-// } 
-
-
-// inputs.forEach((input) => {
-//     input.addEventListener("keyup",validarFormulario);
-//     input.addEventListener("blur",validarFormulario);
-// });
-
-// formulario.addEventListener("submit",(e) =>{
-//     e.preventDefault();
-
-// })

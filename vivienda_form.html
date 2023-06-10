@@ -14,32 +14,33 @@
 </head>
 <body id="form1">
     <main>
-        <form action="" id="formulario">
+        <form id="form_vivienda">
             <h2 id="f-salud">Formulario de vivienda</h2>
 
             <div class="mb-3 fondo_azul" id="form_label">
                 <label for="exampleFormControlInput1" class="form-label">¿Vivis solo o con mas personas?</label>
-                <textarea class="form-control" aria-label="With textarea"></textarea>
+                <textarea class="form-control" aria-label="With textarea" id="soloVivienda"></textarea>
             </div>
             <div class="mb-3 fondo_azul" id="form_label">
                 <label for="exampleFormControlInput1" class="form-label">¿Vivis en casa o departamento?</label>
-                <textarea class="form-control" aria-label="With textarea"></textarea>
+                <textarea class="form-control" aria-label="With textarea" id="departamentoCasa"></textarea>
             </div>
             <div class="mb-3 fondo_azul" id="form_label">
                 <label for="exampleFormControlInput1" class="form-label">¿Tenes cercanias con estaciones de tren/subte?</label>
-                <textarea class="form-control" aria-label="With textarea"></textarea>
+                <textarea class="form-control" aria-label="With textarea" id="cercaniaEsta"></textarea>
             </div>
             <div class="mb-3 fondo_azul" id="form_label">
                 <label for="exampleFormControlInput1" class="form-label">Tu casa/departamento ¿tiene garage?</label>
-                <textarea class="form-control" aria-label="With textarea"></textarea>
+                <textarea class="form-control" aria-label="With textarea" id="garageCasa"></textarea>
             </div>
-
+            <div class="boton">
+                <button type="submit" class="btn btn-primary" id="enviar_vivienda">Ingresar</button>
+            </div>
         </form>
-        <div class="boton">
-            <button type="submit" class="btn btn-primary" id="enviar">Ingresar</button>
-        </div>
-        <script src="index.js"></script>
+
     </main>
     
+
+    <script src="index.js"></script>
 </body>
 </html>

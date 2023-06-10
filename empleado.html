@@ -29,9 +29,8 @@
                           <a class="nav-link active" aria-current="page" href="#pendiente">Mis encuestas</a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link" href=" #completadas">Encuestas completadas</a>
+                          <a class="nav-link" href="#completadas">Encuestas completadas</a>
                       </li>
-                      
                     </ul>
                 </div>
             </div>
@@ -43,7 +42,7 @@
 
         <div id="cards">
   
-          <div class="card" style="width: 18rem;">
+          <div id="vivienda_pendiente" class="card" style="width: 18rem;">
             <img src="./img/edificio.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Vivienda</h5>
@@ -100,6 +99,16 @@
               <button  class="btn btn-primary" id="ver_completada_politica">Ver</button>
             </div>
           </div>
+
+          <div id="vivienda_completada" class="card" style="width: 18rem;" hidden>
+            <img src="./img/edificio.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Vivienda</h5>
+              <p class="card-text">Informacion acerca del lugar que habitas actualmente.</p>
+              <button  class="btn btn-primary" id="ver_completada_vivienda">Ver</button>
+            </div>
+          </div>
+
         </div>
 
 
@@ -109,6 +118,6 @@
     </main>
 
 
-    <script src="index.js"></script>
+  <script src="index.js"></script>
 </body>
 </html>
