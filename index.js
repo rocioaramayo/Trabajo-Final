@@ -71,8 +71,75 @@ $(document).ready(function () {
         $("#ejercicioS").prop('disabled', true);
     }
     
-    
+//Parametros de seguridad
+    var descargar_parametro = params.get('descargar');
+    var eliminar_parametro =params.get("eliminar")
+    var terminologia_parametro =params.get("terminologia")
+    var hackear_parametro =params.get("hackear")
 
+    if (descargar_parametro!= undefined && descargar_parametro != null){
+        $("#seguridad_pendiente").hide()
+        $('#seguridad_completada').removeAttr('hidden');
+    }
+
+    var descargar_parametro_completada = params.get('descargar_completada');
+    if ( descargar_parametro_completada!= undefined && descargar_parametro_completada != null){
+        $("#descarga").val(descargar_parametro_completada)
+        $("#descarga").prop('disabled', true);
+    }
+
+    var eliminar_parametro_completada = params.get('eliminar_completada');
+    if ( eliminar_parametro_completada!= undefined && eliminar_parametro_completada != null){
+        $("#eliminar").val(eliminar_parametro_completada)
+        $("#eliminar").prop('disabled', true);
+    }
+
+    var terminologia_parametro_completada = params.get('terminologia_completada');
+    if ( terminologia_parametro_completada!= undefined && terminologia_parametro_completada != null){
+        $("#terminologia").val(terminologia_parametro_completada)
+        $("#terminologia").prop('disabled', true);
+    }
+
+    var hackear_parametro_completada = params.get('hackear_completada');
+    if ( hackear_parametro_completada!= undefined && hackear_parametro_completada != null){
+        $("#hackear").val(hackear_parametro_completada)
+        $("#hackear").prop('disabled', true);
+    }
+
+//Parametros de trabajo en equipo
+    var rol_parametro = params.get('rol');
+    var descripcion_parametro =params.get("descripcion")
+    var compañeros_parametro =params.get("compañeros")
+    var enojo_parametro =params.get("enojo")
+
+    if (rol_parametro!= undefined && rol_parametro != null){
+        $("#segundo_pendiente").hide()
+        $('#segundo_completada').removeAttr('hidden');
+    }
+
+    var rol_parametro_completada = params.get('rol_completada');
+    if ( rol_parametro_completada!= undefined &&  rol_parametro_completada!= null){
+        $("#rol").val(rol_parametro_completada)
+        $("#rol").prop('disabled', true);
+    }
+
+    var descripcion_parametro_completada = params.get('descripcion_completada');
+    if ( descripcion_parametro_completada!= undefined &&  descripcion_parametro_completada!= null){
+        $("#descripcion").val(descripcion_parametro_completada)
+        $("#descripcion").prop('disabled', true);
+    }
+
+    var compañeros_parametro_completada = params.get('compañeros_completada');
+    if ( compañeros_parametro_completada!= undefined &&  compañeros_parametro_completada!= null){
+        $("#compañeros").val(compañeros_parametro_completada)
+        $("#compañeros").prop('disabled', true);
+    }
+
+    var enojo_parametro_completada = params.get('enojo_completada');
+    if ( enojo_parametro_completada!= undefined &&  enojo_parametro_completada!= null){
+        $("#enojo").val(enojo_parametro_completada)
+        $("#enojo").prop('disabled', true);
+    }
 
 
 
@@ -121,6 +188,22 @@ $(document).ready(function () {
         window.location.href= "empleado.html?edad="+$("#edadAño").val()+"&peso="+$("#pesoCorpo").val()+"&altura="+$("#estatura").val()+"&ejercicio="+$("#ejercicioS").val()
     })
 
+    $("#formulario_seguridad").on("submit", function (evento) {
+        evento.preventDefault();
+        window.location.href= "empleado.html?descargar="+$("#descarga").val()+"&eliminar="+$("#eliminar").val()+"&terminologia="+$("#terminologia").val()+"&hackear="+$("#hackear").val()
+    })
+
+    $("#formulario_seguridad").on("submit", function (evento) {
+        evento.preventDefault();
+        window.location.href= "empleado.html?descargar="+$("#descarga").val()+"&eliminar="+$("#eliminar").val()+"&terminologia="+$("#terminologia").val()+"&hackear="+$("#hackear").val()
+    })
+    $("#formulario_segundo").on("submit", function (evento) {
+        evento.preventDefault();
+        window.location.href= "empleado.html?rol="+$("#rol").val()+"&descripcion"+$("#descripcion").val()+"&compañeros="+$("#compañeros").val()+"&enojo="+$("#enojo").val()
+    })
+
+
+    //vivienda formu
     $("#ver_completada_vivienda").on("click", function () {
         window.location.href = "vivienda_form.html?solocompletada="+solo_parametro +"&departamento_completado="+departamento_parametro+"&tren_completado="+tren_parametro+"&garage_completado="+garage_parametro
         //recibir.html?nombre=Miguel&edad=37
@@ -131,10 +214,16 @@ $(document).ready(function () {
         window.location.href = "salud_form.html?edad_completada="+edad_parametro +"&peso_completada="+peso_parametro+"&altura_completada="+altura_parametro+"&ejercicio_completada="+ejercicio_parametro
 
     })
+    //Seguridad formu
+    $("#ver_completada_seguridad").on("click", function () {
+        window.location.href = "seguridad_form.html?descargar_completada="+descargar_parametro +"&eliminar_completada="+eliminar_parametro+"&terminologia_completada="+terminologia_parametro+"&hackear_completada="+hackear_parametro
 
+    })
 
+    $("#ver_completada_segundo").on("click", function () {
+        window.location.href = "segundo_form.html?rol_completada="+rol_parametro +"&descripcion_completada="+descripcion_parametro+"&compañeros_completada="+compañeros_parametro+"&enojo_completada="+enojo_parametro
 
-
+    })
 
 
 
