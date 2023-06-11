@@ -88,23 +88,20 @@ h2{
     border-radius: 20%;
     margin: 2%;
 }
+
 .cajas_emple{
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto;
     text-align: center;
-    width: 25%;
-    height: fit-content;
-    background-color: transparent;
-    margin:13%;
+    place-items: center;
+    margin: 2% 10% 2% 10%;
 }
-
 
 #empleados_sector{
     display: grid;
     grid-template-columns: auto auto auto;
 } 
-
 
 .fondo_azul{
     padding: 2%;
@@ -142,7 +139,7 @@ h2{
 @media only screen and (max-width:768px){
     #fondo{
         width: 100%;
-        height: 20rem;
+        height: 35rem;
         background-image: url(./img/grupo-jovenes-empresarios-que-trabajan-oficina.jpg);
         background-attachment: fixed;
         background-repeat: no-repeat;
@@ -166,9 +163,6 @@ h2{
         background-color: transparent;
     }
     
-    .form-label{
-
-    }
     .reservado{
         display: flex;
         justify-content: center;
@@ -186,20 +180,14 @@ h2{
     }
 
     .empleado{
-        width: 10rem;
-        height: 10rem;
+        width: 15rem;
+        height: 15rem;
         border-radius: 10%;
         margin: 1%;
+        
     }
-    .cajas_emple{
-        display: grid;
-        grid-template-columns: auto;
-        grid-template-rows: auto;
-        width: 15%;
-        text-align: center;
-        background-color: transparent;
-        transform: translateX(240%);
-    }
+  
+
     #empleados_sector{
         display: grid;
         grid-template-columns: auto;
