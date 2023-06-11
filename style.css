@@ -186,7 +186,9 @@ h2{
         margin: 1%;
         
     }
-  
+    #target{
+        padding: 10%;
+    }
 
     #empleados_sector{
         display: grid;
