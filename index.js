@@ -7,6 +7,15 @@ $(document).ready(function () {
     var tren_parametro =params.get("tren")
     var garage_parametro =params.get("garage")
 
+    var vivienda_es_primero =params.get("primero_vivienda")
+    var salud_es_primero =params.get("primero_salud")
+    var seguridad_es_primero =params.get("primero_seguridad")
+    var segundo_es_primero =params.get("primero_segundo")
+    
+    
+    
+    
+
     if (solo_parametro != undefined && solo_parametro != null){
         $("#vivienda_pendiente").hide()
         $('#vivienda_completada').removeAttr('hidden');
@@ -193,28 +202,45 @@ $(document).ready(function () {
         window.location.href = "vivienda2_form.html"
     })
 
+    
+
     //pendientes 1
     $("#form_vivienda").on("submit", function (evento) {
         evento.preventDefault();
-        window.location.href= "empleado.html?solo="+$("#soloVivienda").val()+"&departamento="+$("#departamentoCasa").val()+"&tren="+$("#cercaniaEsta").val()+"&garage="+$("#garageCasa").val()
+        if(vivienda_es_primero=="true"){
+            window.location.href=  document.referrer + "?solo="+$("#soloVivienda").val()+"&departamento="+$("#departamentoCasa").val()+"&tren="+$("#cercaniaEsta").val()+"&garage="+$("#garageCasa").val()
+        }else{
+            window.location.href=  document.referrer + "&solo="+$("#soloVivienda").val()+"&departamento="+$("#departamentoCasa").val()+"&tren="+$("#cercaniaEsta").val()+"&garage="+$("#garageCasa").val()
+        }
+
     })
     $("#formulario_salud").on("submit", function (evento) {
         evento.preventDefault();
-        window.location.href= "empleado.html?edad="+$("#edadAño").val()+"&peso="+$("#pesoCorpo").val()+"&altura="+$("#estatura").val()+"&ejercicio="+$("#ejercicioS").val()
+        if(salud_es_primero=="true"){
+            window.location.href= document.referrer +"?edad="+$("#edadAño").val()+"&peso="+$("#pesoCorpo").val()+"&altura="+$("#estatura").val()+"&ejercicio="+$("#ejercicioS").val()
+        }else{
+            window.location.href= document.referrer +"&edad="+$("#edadAño").val()+"&peso="+$("#pesoCorpo").val()+"&altura="+$("#estatura").val()+"&ejercicio="+$("#ejercicioS").val()
+        }
     })
-
+//aca
     $("#formulario_seguridad").on("submit", function (evento) {
         evento.preventDefault();
-        window.location.href= "empleado.html?descargar="+$("#descarga").val()+"&eliminar="+$("#eliminar").val()+"&terminologia="+$("#terminologia").val()+"&hackear="+$("#hackear").val()
+        if(seguridad_es_primero=="true"){
+            window.location.href= document.referrer+"?descargar="+$("#descarga").val()+"&eliminar="+$("#eliminar").val()+"&terminologia="+$("#terminologia").val()+"&hackear="+$("#hackear").val()
+        }else{
+            window.location.href= document.referrer+"&descargar="+$("#descarga").val()+"&eliminar="+$("#eliminar").val()+"&terminologia="+$("#terminologia").val()+"&hackear="+$("#hackear").val()
+        }
+       
     })
-
-    $("#formulario_seguridad").on("submit", function (evento) {
-        evento.preventDefault();
-        window.location.href= "empleado.html?descargar="+$("#descarga").val()+"&eliminar="+$("#eliminar").val()+"&terminologia="+$("#terminologia").val()+"&hackear="+$("#hackear").val()
-    })
+    
     $("#formulario_segundo").on("submit", function (evento) {
         evento.preventDefault();
-        window.location.href= "empleado.html?rol="+$("#rol").val()+"&descripcion"+$("#descripcion").val()+"&compañeros="+$("#compañeros").val()+"&enojo="+$("#enojo").val()
+        if(segundo_es_primero=="true"){
+            window.location.href= document.referrer+"?rol="+$("#rol").val()+"&descripcion"+$("#descripcion").val()+"&compañeros="+$("#compañeros").val()+"&enojo="+$("#enojo").val()
+        }else{
+            window.location.href= document.referrer+"&rol="+$("#rol").val()+"&descripcion"+$("#descripcion").val()+"&compañeros="+$("#compañeros").val()+"&enojo="+$("#enojo").val()
+        }
+        
     })
 
 
@@ -238,6 +264,52 @@ $(document).ready(function () {
         window.location.href = "segundo_form.html?rol_completada="+rol_parametro +"&descripcion_completada="+descripcion_parametro+"&compañeros_completada="+compañeros_parametro+"&enojo_completada="+enojo_parametro
 
     })
+    //Terminar botones
+    $("#boton_vivienda").on("click", function (evento) {
+        evento.preventDefault();
+        let es_primero=false
+        if (($("#seguridad_pendiente").is(':hidden')) || ($("#salud_pendiente").is(':hidden')) || ($("#segundo_pendiente").is(':hidden'))){
+            es_primero=false
+        }else{
+           es_primero=true
+        }
+        window.location.href= "vivienda_form.html?primero_vivienda="+es_primero
+    })
+
+    $("#boton_salud").on("click", function (evento) {
+        evento.preventDefault();
+        let es_primero=false
+        if (($("#seguridad_pendiente").is(':hidden')) || ($("#vivienda_pendiente").is(':hidden')) || ($("#segundo_pendiente").is(':hidden'))){
+            es_primero=false
+        }else{
+           es_primero=true
+        }
+        window.location.href= "salud_form.html?primero_salud="+es_primero
+    })
+
+
+    $("#boton_seguridad").on("click", function (evento) {
+        evento.preventDefault();
+        let es_primero=false
+        if (($("#salud_pendiente").is(':hidden')) || ($("#vivienda_pendiente").is(':hidden')) || ($("#segundo_pendiente").is(':hidden'))){
+            es_primero=false
+        }else{
+           es_primero=true
+        }
+        window.location.href= "seguridad_form.html?primero_seguridad="+es_primero
+    })
+    $("#boton_segundo").on("click", function (evento) {
+        evento.preventDefault();
+        let es_primero=false
+        if (($("#seguridad_pendiente").is(':hidden')) || ($("#vivienda_pendiente").is(':hidden')) || ($("#salud_pendiente").is(':hidden'))){
+            es_primero=false
+        }else{
+           es_primero=true
+        }
+        window.location.href= "segundo_form.html?primero_segundo="+es_primero
+    })
+
+
 
 
 
